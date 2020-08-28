@@ -1,0 +1,40 @@
+//  How would you remove duplicate members from an array?
+
+function removeDuplicate(arr){
+  let exists = {};
+  let outArr = [];
+  let elm;
+
+  for(var i =0; i < arr.length; i++){
+    elm = arr[i];
+    if(!exists[elm]){
+      outArr.push(elm);
+      exists[elm] = true;
+   }
+  }
+  return outArr;
+}
+
+--------------------------------------
+    arr.reduce((acc, item) => { 
+                    if(!acc.includes(item)) 
+                    { 
+                    acc.push(item); 
+                    } 
+                    return acc;
+                    }, []);
+
+-------------------------------------------
+function removeDuplicates(array) {
+  return [...new Set(array)]
+}
+------------------------------------------
+function removeDuplicates(array) {
+  let a = []
+  array.map(x => 
+    if(!a.includes(x) {
+      a.push(x)
+    })
+  return a
+};
+-----------------------------------------

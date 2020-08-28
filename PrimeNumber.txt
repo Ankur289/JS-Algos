@@ -1,0 +1,42 @@
+// How would you verify a prime number?
+
+const isPrime = (n) => {
+    let divisor = 2;
+
+    while(n >= divisor){
+        if(n % divisor == 0){
+            return false;
+        }
+        else{
+            divisor++;
+        }
+        return true;
+    }
+}
+
+-------------------------Improved
+
+const isPrime = (n) => {
+    let divisor = 3
+    const limit = Math.sqrt(n)
+
+    if( n==2 || n==3)
+    {
+        return true
+    }
+
+    if(n%2 == 0){
+            return false
+        }
+
+    while(divisor <= limit){
+        if(n % divsior === 0){
+            return false;
+        }
+        else{
+            divisor += 2;
+        }
+    }
+    return true
+}
+

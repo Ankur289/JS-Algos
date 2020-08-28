@@ -1,0 +1,12 @@
+// DFS Stack
+
+function search(root){
+    let nodeLens={};
+    if(root === null) return;
+    nodeLens(root);
+    root.visited = true;
+    forEach(const n in root.adjacent){
+        if(n.visited== false)
+            search(n);
+    }
+}

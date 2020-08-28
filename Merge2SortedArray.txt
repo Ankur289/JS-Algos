@@ -1,0 +1,28 @@
+// Question: How would you merge two sorted array?
+
+// Answer: I will keep a pointer for each array and (read the code. and be careful about this one.)
+
+function mergeSortedArray(a, b){
+    let merged = [],
+        aEle =a[0],
+        bEle =b[0],
+        i=1,
+        j=1;
+
+    if(a.length == 0)
+    return b;
+
+    if(b.length == 0)
+    return a;
+
+    while(aEle || bEle){
+        if(aEle && !bEle) || (aEle < bEle){
+            merged.push(aEle)
+            aEle = a[i++]
+        } else{
+            merged.push(bEle)
+            bEle = b[j++]
+        }
+    }
+    return merged;
+}

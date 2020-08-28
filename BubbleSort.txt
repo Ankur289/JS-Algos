@@ -1,0 +1,19 @@
+// Bubble sort O(n^2)
+
+function sort(n){
+    for(let outer =0; outer < n.length; outer++){
+        let outerElement = n[outer];
+        for(let inner=outer+1;inner<n.length;inner++){
+            let innerElement =n[innner];
+                if(outerElement> innerElement){
+                    //swap
+                    n[outer] = innerElement;
+                    n[inner] = outerElement;
+                    //update reference
+                    outerElement = n[outer];
+                    innerElement = n[inner];
+                }
+        }
+        return n;
+    }
+}

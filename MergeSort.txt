@@ -1,0 +1,28 @@
+// Merge Sort divide and conquer O(nlog n)
+
+function Sort(n){
+    const length =n.length
+
+    if(length === 1){
+        return n;
+    }
+
+    if(length === 2){
+        return n[0] >n[1] ? [n[1], n[0]] : [n[0],n[1]]
+    }
+
+    const mid = length/2
+    return merge(sort(n.splice(0, mid)), sort(n.splice(mid)))
+}
+
+function merge(a =[], b =[]){
+    let merged =[];
+    for(let ai=0,bi=0;ai<a.length || bi<b.length;){
+        if(ai> a.length || a[ai]> b[bi]){
+            merged.push(b[bi++];)
+        }else{
+            merged.push(a[ai++])
+        }
+    }
+    return merged
+}

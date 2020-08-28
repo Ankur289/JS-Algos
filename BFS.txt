@@ -1,0 +1,16 @@
+// BFS
+
+function search(root){
+    let queue = new Queue();
+    root.marked =true;
+    queue.enqueue(root);
+    while(!queue.isEmpty()){
+        Node r = queue.dequeue();
+        forEach(const n in r.adjacent){
+            if(n.marked == false){
+                n.marked = true;
+                queue.enqueue(n);
+            }
+        }
+    }
+}

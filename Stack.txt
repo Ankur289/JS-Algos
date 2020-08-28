@@ -1,0 +1,19 @@
+// Q2: Implement enqueue and dequeue using only two stacks Implement enqueue and dequeue using only two stacks
+
+let inputStack = [];
+let outputStack = [];
+
+funtion enqueue(inputStack, element){
+    return inputStack.push(element)
+}
+
+function dequeue(inputStack, outputStack){
+    if(outputStack.length <=0){
+        while(inputStack.length > 0){
+            let elementToOuput = inputStack.pop();
+            outputStack.push(elementToOuput)
+        }
+    }
+
+    return outputStack.pop();
+}

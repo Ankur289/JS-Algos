@@ -1,0 +1,14 @@
+function indexOf(array, element, offset = 0){
+    const half = parseInt(array.length/2)
+    const current = array[half]
+    if(current === element){
+        return offset +half;
+    }
+    else if(element > current){
+        const right =array.splice(half)
+        return indexOf(right, element, offset + half)
+    }else{
+        const left = array.splice(0, half)
+        return indexOf(left, element, offset)
+    }
+}

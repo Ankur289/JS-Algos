@@ -1,0 +1,12 @@
+// Subset
+
+function getSubsets(n){
+    let array = Array.from(n);
+    let base = [''];
+
+    const results = array.reduce((acc, element) =>{
+        const previous = acc.map(el => `${el}${element}`)
+        return acc.concat(previous)
+    }, base);
+    return results; 
+}
